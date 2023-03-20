@@ -11,16 +11,12 @@
     <style>
         body{
             background-color: rgb(4, 25, 70);
-        }
-        thead.thead{
-            background-color: blueviolet;
-            color: white;
-        }
+        } 
     </style>
   </head>
   <body>
     <div class="container mt-4 shadow-lg p-3 bg-body rounded">
-        <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal">Ingresar producto</button>
+        <button id="btnCrear" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProducto">Ingresar producto</button>
         <table class="table table-bordered table-striped text-center mt-2">
             <thead class="thead">
                 <tr class="bg-primary text-white">
@@ -50,30 +46,45 @@
           <div class="mb-3">
             <label for="nombreProducto" class="col-form-label">Nombre del producto</label>
             <input type="text" class="form-control" id="nombreProducto">
+            <div class="invalid-feedback alertaWarning" id="alertacampo1">
+                Verifique que el campo contenga entre 3 y 50 caracteres.
+            </div>
           </div>
           <div class="mb-3">
             <label for="comentarios" class="col-form-label">Comentarios</label>
             <textarea class="form-control" id="comentarios"></textarea>
-          </div>
+            <div class="invalid-feedback alertaWarning" id="alertacampo2">
+                Verifique que el campo contenga entre 3 y 100 caracteres.
+            </div>
+        </div>
           <div class="mb-3">
             <label for="descripcion" class="col-form-label">Descripción</label>
             <textarea class="form-control" id="descripcion"></textarea>
+            <div class="invalid-feedback alertaWarning" id="alertacampo3">
+                Verifique que el campo contenga entre 3 y 200 caracteres.
+            </div>
           </div>
           <div class="mb-3">
             <label for="categoria" class="col-form-label">Categoria</label>
             <input type="number" class="form-control" id="categoria">
+            <div class="invalid-feedback alertaWarning" id="alertacampo4">
+                Campo obligatorio.
+            </div>
           </div>
           <div class="mb-3">
             <label for="estatus" class="col-form-label">Estatus</label>
             <select class="form-select" id="estatus" aria-label="Default select example">
                 <option value="1">Activo</option>
                 <option value="2">Inactivo</option>
-              </select>
+            </select>
+            <div class="invalid-feedback alertaWarning" id="alertacampo5">
+                Campo obligatorio.
+            </div>
           </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
       </div>
     </form>
     </div>
